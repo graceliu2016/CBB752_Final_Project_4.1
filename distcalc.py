@@ -58,6 +58,7 @@ def distance(filename, index1, index2, outopts, outname):
 	dRvec=np.zeros(3) # difference vector between alpha carbons of interest
 	addedvec=0 # index that keeps track how many of the alpha carbons have 
 				 #been accounted for in dRvec (when =2 have both alpha carbons)
+	resname='' # string containing the 3 letter abreviation of the residue
 	if outopts==2:
 		resnames='' # if keeping track of AA sequence, introduce string resnames to log them
 
@@ -82,7 +83,10 @@ def distance(filename, index1, index2, outopts, outname):
 		# Check if at portion of pdb file that lists coordinates
 		if x[0:4]=="ATOM":
 			# Initialize a count of the index of the amino acid currently sorting through
-			if aacount==0:
+			#    Ignore atoms that are not part of amino acid residues 
+			#		(ignore standard nucleic acids as they do not have Alpha Cs)
+			if aacount==0 and x[17]!=' ':
+				print(x[17:20])
 				aacount+=1
 				resname=x[17:20];
 				if outopts==2:
@@ -90,7 +94,7 @@ def distance(filename, index1, index2, outopts, outname):
 			# Check if at a new residue. If you are, increase the count of amino acids in sequence,
 			#    update resname to reflect that of the current amino acid, and add resname to resnames
 			#    if it is desired to print out the amino acid sequence
-			if x[17:20]!=resname:
+			if x[17:20]!=resname and x[17]!=' ':
 				aacount+=1
 				resname=x[17:20]
 				if outopts==2:
@@ -137,10 +141,6 @@ def distance(filename, index1, index2, outopts, outname):
 		fout.close()
 	
 ### Run
-'''
-def main():
-	distance(args.inputfile, args.index1, args.index2,args.outopts, args.outputfile)
-'''
 if __name__ == '__main__':
 	distance(args.inputfile, args.index1, args.index2,args.outopts, args.outputfile)
 
