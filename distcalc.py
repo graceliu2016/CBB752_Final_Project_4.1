@@ -9,12 +9,12 @@ __maintainer__ = "Peter Williams"
 __email__ = "peter.williams@yale.edu"
 
 ### Usage:      python3 distcalc.py -i <input file> -a <index of residue 1> -b <index of residue 2> -f <output format> -o <.txt output filename>
-### Examples:   python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 2 -o testout.txt 
-###				python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 1 -o testout.txt  
-###				python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 1
+### Examples:   python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 2 -o sample-output.txt 
+###				python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1 -o sample-output.txt  
+###				python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1
 ###				{python3 
 ###				>>>from distcalc import distance
-###				>>>dist=distance('1a3n.pdb',3,20,0,'')
+###				>>>dist=distance('sample-input.pdb',3,20,0,'')
 ###				} 
 ### Note:       	Calculates the distance between two C-alpha molecules in the backbone of a polypeptide/protein
 ###						both -f and -o flags are optional
@@ -85,7 +85,6 @@ def distance(filename, index1, index2, outopts, outname):
 			#    Ignore atoms that are not part of amino acid residues 
 			#		(ignore standard nucleic acids as they do not have Alpha Cs)
 			if aacount==0 and x[17]!=' ':
-				print(x[17:20])
 				aacount+=1
 				resname=x[17:20];
 				if outopts==2:
