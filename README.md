@@ -21,14 +21,11 @@ Examples:
             
   	#In line usage in python:
   	
-       		{python3 
+       		python3 
        		
 		>>>from distcalc import distance
 		
-  		>>>dist=distance('1a3n.pdb',3,20,0,'')
-  		
-  		} 
-'''
+  		>>>dist=distance('1a3n.pdb',3,20,0,'')'''
 
 Input Format:	
 		-i:	input file:		pdb file of a protein
