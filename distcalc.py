@@ -10,7 +10,7 @@ __email__ = "peter.williams@yale.edu"
 
 ### Usage:      python3 distcalc.py -i <input file> -a <index of residue 1> -b <index of residue 2> -f <output format> -o <.txt output filename>
 ### Examples:   python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 2 -o sample-output.txt 
-###				python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1 -o sample-output.txt  
+###				python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1 -o sample-output1.txt  
 ###				python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1
 ###				{python3 
 ###				>>>from distcalc import distance

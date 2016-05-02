@@ -1,0 +1,1 @@
+Distance between Alpha Carbon on residue 3 from Alpha Carbon on residue 20 = 29.038926 Angstroms
