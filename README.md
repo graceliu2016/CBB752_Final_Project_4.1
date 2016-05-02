@@ -8,15 +8,27 @@ The indices (index1 and index2) correspond to the alpha cabon of the nth residue
 The tool can be called from both a terminal or inside python with the formatting listed below.
 
 Usage:      python3 distcalc.py -i <input file> -a <index of residue 1> -b <index of residue 2> -f <output format> -o <.txt output filename>
-Examples: Usage from terminal:
+
+Examples:
+```{r NCBI_python, engine="python", highlight=TRUE}
+	#Usage from terminal:
+	
             python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 2 -o testout.txt 
-            python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 1 -o testout.txt  
+            
+            python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 1 -o testout.txt
+            
             python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 1
-  				In line usage in python:
-          {python3 
-  				>>>from distcalc import distance
-  				>>>dist=distance('1a3n.pdb',3,20,0,'')
-  				} 
+            
+  	#In line usage in python:
+  	
+       		{python3 
+       		
+		>>>from distcalc import distance
+		
+  		>>>dist=distance('1a3n.pdb',3,20,0,'')
+  		
+  		} 
+'''
 
 Input Format:	
 		-i:	input file:		pdb file of a protein
