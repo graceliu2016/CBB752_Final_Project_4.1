@@ -13,11 +13,11 @@ Examples:
 ```{r NCBI_python, engine="python", highlight=TRUE}
 # Usage from terminal:
 	
-            python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 2 -o testout.txt 
-            
-            python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1 -o testout.txt
-            
-            python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1
+        python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 2 -o testout.txt 
+         
+        python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1 -o testout.txt
+        
+        python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1
             
 # In line usage in python:
   	
