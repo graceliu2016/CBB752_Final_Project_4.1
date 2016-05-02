@@ -1,0 +1,95 @@
+---
+title: "4.1 Distcalc"
+author: "Calvin Rhodes"
+date: "Due: May 2, 2016"
+output: pdf_document
+---
+
+# General
+
+The R piece of code will read a pdb file and find the distance between two selected alpha carbons.
+
+The R tool that accomplishes this task is named distcalc. Distcalc takes 5 required inputs: inputfile, index1, index2, outopts, and outputfile. The indices (index1 and index2) correspond to the alpha carbon of the nth residue. The input inputfile is the name of a corresponding pdb file from which to calculate a distance. The code will run after loading the function from the distcalc.rmd file.
+
+## Input Options for discalc:
+
+1. inputfile - the name of the input file (1a3n.pdb)
+2. index1 - integer index of 1st amino acid in sequence to calculate the distance of its alpha C to other (2)
+3. index2 - integer index of 2nd amino acid in sequence to calculate the distance of its alpha C to other (9)
+4. outops - integer (either 0,1,2) to determine output format
+  + 0 : outputs distance in angstroms to console
+  + 1 : outputs distance in angstroms to txt output file called output.txt
+  + 2 : outputs distance in angstroms to txt output file and amino acid sequence of the protein in the pdb file
+5. outputfile - the desired name of the output file ("output.txt")
+
+## Code
+
+Example: Finding the distance between Alpha Carbon 43 and Alpha Carbon 44 of 1a3n:
+
+```{r}
+
+inputfile <- "1a3n.pdb"
+index1 <- 43
+index2 <- 44
+outops <- 0
+outputfile <- "output.txt"
+
+distcalc <- function (inputfile, index1, index2, outops, outputfile) {
+  no_col <- max(count.fields(inputfile))
+  x <- read.table(inputfile, fill = TRUE, stringsAsFactors = FALSE, col.names = 1:no_col, skip = 1)
+  atoms <- x[x$X1 == "ATOM",]
+  alphacarbons <- atoms[atoms$X3 == "CA",]
+  alphacarbons$X2 <- as.integer(alphacarbons$X2)
+  alphacarbons$X6 <- as.integer(alphacarbons$X6)
+  
+  #Cleaning alphacarbons
+  nodup <- !duplicated(alphacarbons$X6)
+  alphacarbons <- alphacarbons [nodup,]
+
+  #Identifying Atoms by AA Index
+  atom1 <- alphacarbons[alphacarbons$X6 == index1,]
+  atom2 <- alphacarbons[alphacarbons$X6 == index2,]
+  
+  #Distance Calculation
+  vectdist <- data.frame(x = as.numeric(atom2$X7) - as.numeric(atom1$X7), y = as.numeric(atom2$X8) - as.numeric(atom1$X8), z = as.numeric(atom2$X9) - as.numeric(atom1$X9))
+  
+  normdist <- as.numeric(sqrt(vectdist[1]^2 + vectdist[2]^2 + vectdist[3]^2))
+  
+  if (outops == 0) {
+    print(normdist)
+  }
+  if (outops == 1) {
+    write(normdist, file = outputfile)
+  }
+  if (outops == 2) {
+    write(normdist, file = outputfile)
+    
+    alphacarbons$abbrev <- alphacarbons$X4
+    alphacarbons$abbrev[alphacarbons$abbrev == "ALA"] <- "A"
+    alphacarbons$abbrev[alphacarbons$abbrev == "ARG"] <- "R"
+    alphacarbons$abbrev[alphacarbons$abbrev == "ASN"] <- "N"
+    alphacarbons$abbrev[alphacarbons$abbrev == "ASP"] <- "D"
+    alphacarbons$abbrev[alphacarbons$abbrev == "CYS"] <- "C"
+    alphacarbons$abbrev[alphacarbons$abbrev == "GLU"] <- "E"
+    alphacarbons$abbrev[alphacarbons$abbrev == "GLN"] <- "Q"
+    alphacarbons$abbrev[alphacarbons$abbrev == "GLY"] <- "G"
+    alphacarbons$abbrev[alphacarbons$abbrev == "HIS"] <- "H"
+    alphacarbons$abbrev[alphacarbons$abbrev == "ILE"] <- "I"
+    alphacarbons$abbrev[alphacarbons$abbrev == "LEU"] <- "L"
+    alphacarbons$abbrev[alphacarbons$abbrev == "LYS"] <- "K"
+    alphacarbons$abbrev[alphacarbons$abbrev == "MET"] <- "M"
+    alphacarbons$abbrev[alphacarbons$abbrev == "PHE"] <- "F"
+    alphacarbons$abbrev[alphacarbons$abbrev == "PRO"] <- "P"
+    alphacarbons$abbrev[alphacarbons$abbrev == "SER"] <- "S"
+    alphacarbons$abbrev[alphacarbons$abbrev == "THR"] <- "T"
+    alphacarbons$abbrev[alphacarbons$abbrev == "TRP"] <- "W"
+    alphacarbons$abbrev[alphacarbons$abbrev == "TYR"] <- "Y"
+    alphacarbons$abbrev[alphacarbons$abbrev == "VAL"] <- "V"
+    
+    output = file("output.txt", open = "w")
+    cat(normdist, "\n", alphacarbons$abbrev, sep="", file = output)
+    
+  }
+}
+
+```
