@@ -58,3 +58,9 @@ The R tool that accomplishes this task is named distcalc. Distcalc takes 5 requi
   + 1 : outputs distance in angstroms to txt output file called output.txt
   + 2 : outputs distance in angstroms to txt output file and amino acid sequence of the protein in the pdb file
 5. outputfile - the desired name of the output file ("output.txt")
+
+### Usage
+
+```{r}
+distcalc(inputfile = "1a3n.pdb", index1 = 43, index2 = 44, outops = 0, outputfile = "output.txt") 
+```
