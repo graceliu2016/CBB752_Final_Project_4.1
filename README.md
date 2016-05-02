@@ -7,17 +7,17 @@ distcalc.py takes 3 required inputs (inputfile, index1, and index2) and has two 
 The indices (index1 and index2) correspond to the alpha cabon of the nth residue. The input inputfile is the name of a corresponding pdb file from which to calculate a distance.
 The tool can be called from both a terminal or inside python with the formatting listed below.
 
-Usage:      python3 distcalc.py -i <input file> -a <index of residue 1> -b <index of residue 2> -f <output format> -o <.txt output filename>
+Usage:      python3 distcalc.py -i < input file > -a < index of residue 1 > -b < index of residue 2 > -f < output format > -o <.txt output filename>
 
 Examples:
 ```{r NCBI_python, engine="python", highlight=TRUE}
 # Usage from terminal:
 	
-            python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 2 -o testout.txt 
+            python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 2 -o testout.txt 
             
-            python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 1 -o testout.txt
+            python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1 -o testout.txt
             
-            python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 1
+            python3 distcalc.py -i sample-input.pdb -a 3 -b 20 -f 1
             
 # In line usage in python:
   	
