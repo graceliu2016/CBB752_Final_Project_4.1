@@ -11,7 +11,7 @@ Usage:      python3 distcalc.py -i <input file> -a <index of residue 1> -b <inde
 
 Examples:
 ```{r NCBI_python, engine="python", highlight=TRUE}
-	#Usage from terminal:
+#Usage from terminal:
 	
             python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 2 -o testout.txt 
             
@@ -25,14 +25,18 @@ Examples:
        		
 		>>>from distcalc import distance
 		
-  		>>>dist=distance('1a3n.pdb',3,20,0,'')'''
+  		>>>dist=distance('1a3n.pdb',3,20,0,'')
+```
 
-Input Format:	
-		-i:	input file:		pdb file of a protein
-		-a:	index1:			integer index of amino acid in sequence to calculate the distance of its alpha C to anothers
-		-b:	index2:			integer index of other amino acid in sequence to calculate the distance of its alpha C to that of index1
-		-f:	outopts: 		integer (either 0,1,2) to determine output format, defaults to outputting in line
-							0 : outputs distance in angstroms to command line
-							1 : outputs distance in angstroms to txt output file
-							2 : outputs distance in angstroms to txt output file and amino acid sequence of the protein in the pdb file
-		-o:	outpoutfile:	name of txt file for output options 1 and 2, defaults to "output.txt"
+Input Formats:
+```{r NCBI_python, engine="python", highlight=TRUE}
+	-i:	input file:		pdb file of a protein
+	-a:	index1:			integer index of amino acid in sequence to calculate the distance of its alpha C to anothers
+	-b:	index2:			integer index of other amino acid in sequence to calculate the distance of its alpha C to that of index1
+	-f:	outopts: 		integer (either 0,1,2) to determine output format, defaults to outputting in line
+						0 : outputs distance in angstroms to command line
+						1 : outputs distance in angstroms to txt output file
+						2 : outputs distance in angstroms to txt output file and amino acid sequence of the protein in the pdb file
+	-o:	outputfile:	name of txt file for output options 1 and 2, defaults to "output.txt"
+```
+
