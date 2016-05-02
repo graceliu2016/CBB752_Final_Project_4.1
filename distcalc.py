@@ -16,9 +16,8 @@ __email__ = "peter.williams@yale.edu"
 ###				>>>from distcalc import distance
 ###				>>>dist=distance('1a3n.pdb',3,20,0,'')
 ###				} 
-### Note:       	Calculates the bond angles and dihedral angles of 
-###						consecutive C-alpha molecules in a coursegrained backbone of a polypeptide/protein
-###						both -b and -d flags are optional
+### Note:       	Calculates the distance between two C-alpha molecules in the backbone of a polypeptide/protein
+###						both -f and -o flags are optional
 ### Input Format:	
 ###		-i:	input file:		pdb file of a protein
 ###		-a:	index1:			integer index of amino acid in sequence to calculate the distance of its alpha C to anothers
@@ -35,7 +34,7 @@ import numpy as np
 
 ### Allocate input arguments
 if __name__ == '__main__':
-	parser = argparse.ArgumentParser(description='Smith-Waterman Algorithm')
+	parser = argparse.ArgumentParser(description='Euclidian Distance Calculator between Alpha Carbons in pdb file')
 	parser.add_argument('-i', '--inputfile', help='input file name', required=True)
 	parser.add_argument('-a', '--index1', help='index of first residue in sequence', required=True)
 	parser.add_argument('-b', '--index2', help='index of second residue in sequence', required=True)
