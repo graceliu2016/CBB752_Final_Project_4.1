@@ -21,7 +21,7 @@ Examples:
             
 # In line usage in python:
   	
-       	python3 
+    python3 
        		
 	>>>from distcalc import distance
 	
