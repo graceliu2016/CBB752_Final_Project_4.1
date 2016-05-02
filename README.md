@@ -11,7 +11,7 @@ Usage:      python3 distcalc.py -i <input file> -a <index of residue 1> -b <inde
 
 Examples:
 ```{r NCBI_python, engine="python", highlight=TRUE}
-#Usage from terminal:
+# Usage from terminal:
 	
             python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 2 -o testout.txt 
             
@@ -19,13 +19,13 @@ Examples:
             
             python3 distcalc.py -i 1a3n.pdb -a 3 -b 20 -f 1
             
-  	#In line usage in python:
+# In line usage in python:
   	
-       		python3 
+       	python3 
        		
-		>>>from distcalc import distance
-		
-  		>>>dist=distance('1a3n.pdb',3,20,0,'')
+	>>>from distcalc import distance
+	
+  	>>>dist=distance('1a3n.pdb',3,20,0,'')
 ```
 
 Input Formats:
