@@ -5,6 +5,7 @@ Tool that calculates the distance between two alpha carbons from a PDB file
 Note: This tool is part of a set of bioinformatic and biological structure tools created for CBB752 at Yale University in the Spring 2016. The website containing links to the set of tools can be found at: https://github.com/CBB752Spring2016/CBB752Spring2016.github.io
 
 # The python tool that accomplishes this task is named distcalc.py
+## General
 distcalc.py takes 3 required inputs (inputfile, index1, and index2) and has two optional (outopts, and outputfile)
 The indices (index1 and index2) correspond to the alpha cabon of the nth residue. The input inputfile is the name of a corresponding pdb file from which to calculate a distance.
 The tool can be called from both a terminal or inside python with the formatting listed below.
@@ -49,10 +50,6 @@ Input Formats:
 					protein in the pdb file
 	
 	-o:	outputfile:	name of txt file for output options 1 and 2, defaults to "output.txt"
-
-```{r NCBI_python, engine="python", highlight=TRUE}
-
-```
 
 # The R tool that accomplishes this task is named distcalc.rmd
 
