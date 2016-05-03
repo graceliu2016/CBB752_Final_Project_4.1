@@ -2,7 +2,8 @@
 ---------------------------------------------------------------
 Tool that calculates the distance between two alpha carbons from a PDB file
 
-Note: This tool is part of a set of bioinformatic and biological structure tools created for CBB752 at Yale University in the Spring 2016. The website containing links to the set of tools can be found at: https://github.com/CBB752Spring2016/CBB752Spring2016.github.io
+## Note: 
+This tool is part of a set of bioinformatic and biological structure tools created for CBB752 at Yale University in the Spring 2016. The website containing links to the set of tools can be found at: https://github.com/CBB752Spring2016/CBB752Spring2016.github.io
 
 # The python tool that accomplishes this task is named distcalc.py
 ## General
@@ -14,7 +15,7 @@ The tool can be called from both a terminal or inside python with the formatting
 
 Usage:      python3 distcalc.py -i < input file > -a < index of residue 1 > -b < index of residue 2 > -f < output format > -o <.txt output filename>
 
-Examples:
+### Examples:
 ```{r NCBI_python, engine="python", highlight=TRUE}
 # Usage from terminal:
 	
