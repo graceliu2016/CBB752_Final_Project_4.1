@@ -1,6 +1,7 @@
 **README for CBB_Bioinformatics_FinalProject_4.1**
 ---------------------------------------------------------------
 Tool that calculates the distance between two alpha carbons from a PDB file
+
 Note: This tool is part of a set of bioinformatic and biological structure tools created for CBB752 at Yale University in the Spring 2016. The website containing links to the set of tools can be found at: https://github.com/CBB752Spring2016/CBB752Spring2016.github.io
 
 # The python tool that accomplishes this task is named distcalc.py
@@ -30,15 +31,27 @@ Examples:
 ```
 
 Input Formats:
-```{r NCBI_python, engine="python", highlight=TRUE}
-	-i:	input file:		pdb file of a protein
-	-a:	index1:			integer index of amino acid in sequence to calculate the distance of its alpha C to anothers
-	-b:	index2:			integer index of other amino acid in sequence to calculate the distance of its alpha C to that of index1
-	-f:	outopts: 		integer (either 0,1,2) to determine output format, defaults to outputting in line
-						0 : outputs distance in angstroms to command line
-						1 : outputs distance in angstroms to txt output file
-						2 : outputs distance in angstroms to txt output file and amino acid sequence of the protein in the pdb file
+
+	-i:	input file:	pdb file of a protein
+	
+	-a:	index1:		integer index of amino acid in sequence to calculate the distance of its alpha C to anothers
+	
+	-b:	index2:		integer index of other amino acid in sequence to calculate the distance of its alpha C to that 						
+					of index1
+	-f:	outopts: 	integer (either 0,1,2) to determine output format, defaults to outputting in line
+	
+				0 : outputs distance in angstroms to command line
+	
+				1 : outputs distance in angstroms to txt output file
+	
+				2 : outputs distance in angstroms to txt output file and amino acid sequence of the 
+						
+					protein in the pdb file
+	
 	-o:	outputfile:	name of txt file for output options 1 and 2, defaults to "output.txt"
+
+```{r NCBI_python, engine="python", highlight=TRUE}
+
 ```
 
 # The R tool that accomplishes this task is named distcalc.rmd
