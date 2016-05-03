@@ -10,6 +10,8 @@ distcalc.py takes 3 required inputs (inputfile, index1, and index2) and has two 
 The indices (index1 and index2) correspond to the alpha cabon of the nth residue. The input inputfile is the name of a corresponding pdb file from which to calculate a distance.
 The tool can be called from both a terminal or inside python with the formatting listed below.
 
+## Usage
+
 Usage:      python3 distcalc.py -i < input file > -a < index of residue 1 > -b < index of residue 2 > -f < output format > -o <.txt output filename>
 
 Examples:
@@ -30,8 +32,7 @@ Examples:
 	
   	>>>dist=distance('1a3n.pdb',3,20,0,'')
 ```
-
-Input Formats:
+## Input Formats:
 
 	-i:	input file:	pdb file of a protein
 	
