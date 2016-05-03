@@ -8,7 +8,7 @@ This tool is part of a set of bioinformatic and biological structure tools creat
 # The python tool that accomplishes this task is named distcalc.py
 ## General
 distcalc.py takes 3 required inputs (inputfile, index1, and index2) and has two optional (outopts, and outputfile)
-The indices (index1 and index2) correspond to the alpha cabon of the nth residue. The input inputfile is the name of a corresponding pdb file from which to calculate a distance.
+The indices (index1 and index2) correspond to the alpha cabons of the ith and jth residues. The input (inputfile) is the name of a corresponding pdb file from which to calculate the distance. The distance is given in Angstroms. outopts allows the user to produce the distance in python to assign to a variable or print out to a text file with the option of including the amino acid sequence comma delimitted.
 The tool can be called from both a terminal or inside python with the formatting listed below.
 
 ## Usage
